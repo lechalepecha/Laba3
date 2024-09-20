@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun Solve(view: View){
+        val inputText = findViewById<EditText>(R.id.editTextText).text.toString()
+        val inputNum = findViewById<EditText>(R.id.textNumber).text.toString().toInt()
+
+
 
     }
 }
