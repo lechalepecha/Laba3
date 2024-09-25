@@ -59,8 +59,9 @@
         android:id="@+id/editTextText"
         android:layout_width="319dp"
         android:layout_height="54dp"
+        android:digits="1"
         android:ems="10"
-        android:hint="Введите любую строку"
+        android:hint="Введите любой символ"
         android:inputType="text"
         android:textColorHint="#A6A5A5"
         app:layout_constraintBottom_toTopOf="@+id/textNumber"
@@ -69,5 +70,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.938" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="375dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
+        android:text="АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШ"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

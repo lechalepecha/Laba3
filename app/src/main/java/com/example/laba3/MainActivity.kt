@@ -3,6 +3,7 @@ package com.example.laba3
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,8 +25,18 @@ class MainActivity : AppCompatActivity() {
     fun Solve(view: View){
         val inputText = findViewById<EditText>(R.id.editTextText).text.toString()
         val inputNum = findViewById<EditText>(R.id.textNumber).text.toString().toInt()
+        val output = findViewById<TextView>(R.id.textView)
 
+        val originalText = output.text.toString()
+        val newText: String
 
+        if (inputNum >= originalText.length) {
+            //newText = String(originalText.length) { inputText } // replace with your desired replacement character
+        } else {
+           // newText = originalText.substring(0, inputNum).replace(originalText.substring(0, inputNum), String(inputNum) { inputText }) + originalText.substring(inputNum)
+        }
+
+        //output.text = newText
 
     }
 }
