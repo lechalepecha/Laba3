@@ -2,6 +2,7 @@ package com.example.laba3
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -11,6 +12,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var inputText: EditText
+    private lateinit var inputNum: EditText
+    private lateinit var output: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -20,23 +25,34 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
 
+        inputText = findViewById(R.id.editTextText)
+        inputNum = findViewById(R.id.textNumber)
+        output = findViewById(R.id.textView)
+
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener(this::Solve)
+
+    }
     fun Solve(view: View){
-        val inputText = findViewById<EditText>(R.id.editTextText).text.toString()
-        val inputNum = findViewById<EditText>(R.id.textNumber).text.toString().toInt()
-        val output = findViewById<TextView>(R.id.textView)
+        var newtext = inputText.text.toString()
+        val n = inputNum.text.toString().toInt()
+        var outputtext = output.text.toString()
 
-        val originalText = output.text.toString()
-        val newText: String
-
-        if (inputNum >= originalText.length) {
-            //newText = String(originalText.length) { inputText } // replace with your desired replacement character
-        } else {
-           // newText = originalText.substring(0, inputNum).replace(originalText.substring(0, inputNum), String(inputNum) { inputText }) + originalText.substring(inputNum)
+        if(n>=outputtext.length)
+        {
+            for(i in 0..outputtext.length-1 ) {
+                val sb = StringBuilder(outputtext).also { it.setCharAt(i, newtext.toCharArray()[0]) }
+                outputtext = sb.toString()
+            }
         }
-
-        //output.text = newText
-
+        else{
+            for(i in 0..n-1 ) {
+                val sb = StringBuilder(outputtext).also { it.setCharAt(i, newtext.toCharArray()[0]) }
+                outputtext = sb.toString()
+            }
+        }
+        output.text = outputtext
     }
+
 }
